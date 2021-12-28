@@ -1,5 +1,8 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/material.dart';
+
+import 'send_money_page.dart';
 
 class ContactsScreen extends StatefulWidget {
   const ContactsScreen({Key? key}) : super(key: key);
@@ -9,7 +12,7 @@ class ContactsScreen extends StatefulWidget {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
-   List<dynamic> _contacts = [
+   final List<dynamic> _contacts = [
     {
       'name': 'John',
       'avatar': 'assets/images/avatar-1.png',
@@ -72,7 +75,193 @@ class _ContactsScreenState extends State<ContactsScreen> {
           ),
         ),
       ),
-      body: Container(),
+      body: SingleChildScrollView(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 50,),
+                FadeInUp(
+                  duration: Duration(milliseconds: 500),
+                  child: Container(
+                    width: double.infinity,
+                    height: 300,
+                    padding: EdgeInsets.all(90.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.grey.shade200, width: 1.0),
+                    ),
+                    child: Stack(
+                      children: [
+                        for (double i = 0; i < 360; i += 60)
+                          AnimChain(
+                              initialDelay: Duration(milliseconds: i.toInt())
+                          )
+                              .next(
+                            wait: Duration(milliseconds: 1000),
+                            widget: AnimatedAlignPositioned(
+                              dx: 0,
+                              dy: 150,
+                              duration: Duration(seconds: 1),
+                              rotateDegrees: 0,
+                              touch: Touch.middle,
+                              child: user(0, i),
+                            ),
+                          )
+                              .next(
+                            wait: Duration(seconds: 2),
+                            widget: AnimatedAlignPositioned(
+                              dx: i / 360,
+                              dy: 150,
+                              duration: Duration(seconds: 1),
+                              rotateDegrees: i,
+                              touch: Touch.middle,
+                              child: user(0, i),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 80,),
+                FadeInRight(
+                  duration: Duration(milliseconds: 500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, bottom: 15.0, top: 10.0),
+                    child: Text('Most Recent', style: TextStyle(fontSize: 16, color: Colors.grey.shade200, fontWeight: FontWeight.w500),),
+                  ),
+                ),
+                Container(
+                  height: 90,
+                  padding: EdgeInsets.only(left: 20),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _contacts.length,
+                    itemBuilder: (context, index) {
+                      return FadeInRight(
+                        duration: Duration(milliseconds: (index * 100) + 500),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(
+                                    builder: (context) => TransferMoney(
+                                        name: _contacts[index]['name'],
+                                        avatar: _contacts[index]['avatar']
+                                    )
+                                )
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: Colors.blueGrey[100],
+                                  backgroundImage: AssetImage(_contacts[index]['avatar']),
+                                ),
+                                const SizedBox(height: 10,),
+                                Text(_contacts[index]['name'], style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,color: Colors.blueGrey),),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 30,),
+                FadeInRight(
+                  duration: Duration(milliseconds: 500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, bottom: 15.0, top: 10.0),
+                    child: Text('All Contacts', style: TextStyle(fontSize: 16, color: Colors.grey.shade200, fontWeight: FontWeight.w500),),
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height - 200,
+                  padding: EdgeInsets.only(left: 20),
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    itemCount: _contacts.length,
+                    itemBuilder: (context, index) {
+                      return FadeInRight(
+                        duration: Duration(milliseconds: (index * 100) + 500),
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: Row(
+                            children: <Widget>[
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: Colors.red[100],
+                                    backgroundImage: AssetImage(_contacts[index]['avatar']),
+                                  ),
+                                  const SizedBox(width: 10,),
+                                  Text(_contacts[index]['name'], style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,color: Colors.blueGrey),),
+                                ],
+                              ),
+                              const Spacer(),
+                              IconButton(
+                                icon: Icon(Icons.arrow_forward_ios, color: Colors.blueGrey, size: 15,),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ]
+          )
+      ),
     );
   }
+   user(int index, double number) {
+     index = number ~/ 60;
+     return FadeInRight(
+       delay: const Duration(seconds: 1),
+       duration: Duration(milliseconds: (index * 100) + 500),
+       child: GestureDetector(
+         onTap: () {
+           Navigator.push(context,
+               MaterialPageRoute(
+                   builder: (context) => TransferMoney(
+                       name: _contacts[index]['name'],
+                       avatar: _contacts[index]['avatar']
+                   )
+               )
+           );
+         },
+         child: Container(
+           margin:  const EdgeInsets.only(right: 20),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Transform.rotate(
+                 angle: number / 60 * 5.2,
+                 child: CircleAvatar(
+                   radius: 30,
+                   backgroundColor: Colors.green.shade100,
+                   backgroundImage: AssetImage(_contacts[index]['avatar']),
+                 ),
+               ),
+             ],
+           ),
+         ),
+       ),
+     );
+   }
+
+   Container circle(Color color, [double diameter = 50.0]) {
+     return Container(
+         width: diameter,
+         height: diameter,
+         decoration: BoxDecoration(
+           color: color,
+           shape: BoxShape.circle,
+         ));
+   }
 }

@@ -41,6 +41,7 @@ dependencies:
   animate_do: ^2.0.0
   pattern_formatter: ^2.0.0
   flutter_bounce: ^1.1.0
+  align_positioned: ^3.0.0
 
 dev_dependencies:
   flutter_test:
