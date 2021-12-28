@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:practice/contact_page.dart';
 import 'package:practice/send_money_page.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:animate_do/animate_do.dart';
@@ -96,7 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: const Text('Analytics'),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  const ContactsScreen()));
+                  },
                   leading:const  Icon(Iconsax.profile_2user),
                   title: const Text('Contacts'),
                 ),
