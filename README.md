@@ -1,14 +1,15 @@
 # Wallet  Application Flutter
 ### Wallet Page
 <img src="assets/screenshots/wallet.png" />
+
 ### Contact Page
-<img src="assets/screenshot/contact-page-2.png" />
+<img src="assets/screenshots/contact-page-2.png" />
 
 ### Send Money Page
-<img src="assets/screenshot/send-money-page.png" />
+<img src="assets/screenshots/send-money-page.png" />
 
 ### Contact Page
-<img src="assets/screenshot/drawer.png" />
+<img src="assets/screenshots/drawer.png" />
 
 ## Getting Started
 
