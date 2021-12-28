@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:practice/send_money_page.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:animate_do/animate_do.dart';
 
@@ -153,7 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 20,
                     ),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  const TransferMoney(name: '',avatar: '',)),);
+                      },
                       shape: RoundedRectangleBorder(
                           side: BorderSide(
                               color: const Color(0xff02d39a).withOpacity(0.4),
