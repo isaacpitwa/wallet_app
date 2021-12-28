@@ -54,72 +54,70 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: Drawer(
-        child: SafeArea(
-          child: Container(
-            padding: const EdgeInsets.only(top: 20),
-            color: const Color(0xff161621),
-            child: ListTileTheme(
-              textColor: Colors.blueGrey,
-              iconColor: Colors.blueGrey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      width: 80.0,
-                      height: 80.0,
-                      margin: const EdgeInsets.only(
-                        left: 20,
-                        top: 24.0,
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        color: Colors.blueGrey,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.asset('assets/images/avatar-1.png')
-                  ),
-                  const SizedBox(height: 10,),
-                  const  Padding(
-                    padding: EdgeInsets.only(left: 30.0),
-                    child: Text("John Doe",
-                      style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w600),),
-                  ),
-                  const Spacer(),
-                  const Divider(color: Colors.blueGrey,),
-                  ListTile(
-                    onTap: () {},
-                    leading: const Icon(Iconsax.home),
-                    title: const Text('Dashboard'),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    leading: const  Icon(Iconsax.chart_2),
-                    title: const Text('Analytics'),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    leading:const  Icon(Iconsax.profile_2user),
-                    title: const Text('Contacts'),
-                  ),
-                  const SizedBox(height: 50,),
-                  Divider(color: Colors.grey.shade800),
-                  ListTile(
-                    onTap: () {},
-                    leading: const Icon(Iconsax.setting_2),
-                    title: const Text('Settings'),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    leading: const Icon(Iconsax.support),
-                    title: const Text('Support'),
-                  ),
-                  const Spacer(),
-                  const Padding(
-                    padding:  EdgeInsets.all(20.0),
-                    child: Text('Version 1.0.0', style: TextStyle(color: Colors.blueGrey),),
-                  )
-                ],
-              ),
+        child: Container(
+          padding: const EdgeInsets.only(top: 30),
+          color: const Color(0xff161621),
+          child: ListTileTheme(
+            textColor: Colors.blueGrey,
+            iconColor: Colors.blueGrey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                    width: 80.0,
+                    height: 80.0,
+                    margin: const EdgeInsets.only(
+                      left: 20,
+                      top: 24.0,
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: const BoxDecoration(
+                      color: Colors.blueGrey,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset('assets/images/avatar-1.png')
+                ),
+                const SizedBox(height: 10,),
+                const  Padding(
+                  padding: EdgeInsets.only(left: 30.0),
+                  child: Text("John Doe",
+                    style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w600),),
+                ),
+                const Spacer(),
+                const Divider(color: Colors.blueGrey,),
+                ListTile(
+                  onTap: () {},
+                  leading: const Icon(Iconsax.home),
+                  title: const Text('Dashboard'),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading: const  Icon(Iconsax.chart_2),
+                  title: const Text('Analytics'),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading:const  Icon(Iconsax.profile_2user),
+                  title: const Text('Contacts'),
+                ),
+                const SizedBox(height: 50,),
+                Divider(color: Colors.grey.shade800),
+                ListTile(
+                  onTap: () {},
+                  leading: const Icon(Iconsax.setting_2),
+                  title: const Text('Settings'),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading: const Icon(Iconsax.support),
+                  title: const Text('Support'),
+                ),
+                const Spacer(),
+                const Padding(
+                  padding:  EdgeInsets.all(20.0),
+                  child: Text('Version 1.0.0', style: TextStyle(color: Colors.blueGrey),),
+                )
+              ],
             ),
           ),
         ),
