@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bounce/flutter_bounce.dart' as BouncingWidget;
+import 'package:flutter_bounce/flutter_bounce.dart' as bouncing_widget;
 import 'package:pattern_formatter/pattern_formatter.dart';
 
 class TransferMoney extends StatefulWidget {
@@ -16,8 +16,8 @@ class TransferMoney extends StatefulWidget {
 class _TransferMoneyState extends State<TransferMoney> {
   var amount = TextEditingController(text: "0.00");
 
-  final FocusNode _focusNode = new FocusNode();
-  final TextEditingController _editingController = new TextEditingController();
+  final FocusNode _focusNode =  FocusNode();
+  final TextEditingController _editingController = TextEditingController();
   bool isFocused = false;
 
   final List<String> _feedbacks = [
@@ -38,8 +38,6 @@ class _TransferMoneyState extends State<TransferMoney> {
     setState(() {
       isFocused = _focusNode.hasFocus;
     });
-
-    print('focus changed.');
   }
 
   @override
@@ -58,21 +56,21 @@ class _TransferMoneyState extends State<TransferMoney> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 FadeInDown(
                   from: 100,
-                  duration: Duration(milliseconds: 1000),
+                  duration: const Duration(milliseconds: 1000),
                   child: Container(
                     width: 130,
                     height: 130,
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.pink.shade50,
                       borderRadius: BorderRadius.circular(100),
@@ -82,42 +80,42 @@ class _TransferMoneyState extends State<TransferMoney> {
                         child: Image.asset(widget.avatar)),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 FadeInUp(
                     from: 60,
-                    delay: Duration(milliseconds: 500),
-                    duration: Duration(milliseconds: 1000),
-                    child: Text(
+                    delay: const Duration(milliseconds: 500),
+                    duration: const Duration(milliseconds: 1000),
+                    child: const Text(
                       "Send Money To",
                       style: TextStyle(color: Colors.grey),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 FadeInUp(
                     from: 30,
-                    delay: Duration(milliseconds: 800),
-                    duration: Duration(milliseconds: 1000),
+                    delay: const Duration(milliseconds: 800),
+                    duration: const Duration(milliseconds: 1000),
                     child: Text(
                       widget.name,
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color:Colors.blueGrey),
+                          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color:Colors.blueGrey),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 FadeInUp(
                   from: 40,
-                  delay: Duration(milliseconds: 800),
-                  duration: Duration(milliseconds: 1000),
+                  delay: const Duration(milliseconds: 800),
+                  duration: const Duration(milliseconds: 1000),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: TextField(
                       controller: amount,
                       textAlign: TextAlign.center,
-                      keyboardType: TextInputType.numberWithOptions(
+                      keyboardType: const TextInputType.numberWithOptions(
                           signed: true, decimal: true),
                       cursorColor: Colors.black,
                       style: TextStyle(
@@ -155,24 +153,24 @@ class _TransferMoneyState extends State<TransferMoney> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const  SizedBox(
                   height: 10,
                 ),
                 // note textfield
                 FadeInUp(
                   from: 60,
-                  delay: Duration(milliseconds: 800),
-                  duration: Duration(milliseconds: 1000),
+                  delay: const Duration(milliseconds: 800),
+                  duration: const Duration(milliseconds: 1000),
                   child: AnimatedContainer(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    duration: Duration(milliseconds: 500),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    duration: const Duration(milliseconds: 500),
                     decoration: BoxDecoration(
-                      color: Color(0xff272730),
+                      color: const Color(0xff272730),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                           color: isFocused
-                              ? Color(0xff02d39a)
-                              : Color(0xff272730),
+                              ? const Color(0xff02d39a)
+                              : const Color(0xff272730),
                           width: 2),
                       // // boxShadow:
                     ),
@@ -203,8 +201,8 @@ class _TransferMoneyState extends State<TransferMoney> {
                 ),
                 FadeInUp(
                   from: 60,
-                  delay: Duration(milliseconds: 800),
-                  duration: Duration(milliseconds: 1000),
+                  delay: const Duration(milliseconds: 800),
+                  duration: const Duration(milliseconds: 1000),
                   child: Container(
                     height: 50,
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -216,19 +214,18 @@ class _TransferMoneyState extends State<TransferMoney> {
                           from: 100,
                           delay: Duration(milliseconds: index * 500),
                           duration: const Duration(milliseconds: 1000),
-                          child: BouncingWidget.Bounce(
-                            duration: Duration(milliseconds: 100),
-                            // scaleFactor: 1.5,
+                          child: bouncing_widget.Bounce(
+                            duration: const Duration(milliseconds: 100),
                             onPressed: () {
                               _editingController.text = _feedbacks[index];
                               _focusNode.requestFocus();
                             },
                             child: Container(
-                              margin: EdgeInsets.only(right: 20),
+                              margin: const EdgeInsets.only(right: 20),
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xff272730),
+                                color: const Color(0xff272730),
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(
                                     color: Colors.grey.shade800, width: 2),
@@ -245,11 +242,11 @@ class _TransferMoneyState extends State<TransferMoney> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 FadeInUp(
-                  duration: Duration(milliseconds: 1000),
+                  duration: const Duration(milliseconds: 1000),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50.0),
                     child: Material(
