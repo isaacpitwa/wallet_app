@@ -155,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  const TransferMoney(name: '',avatar: '',)),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  const TransferMoney(name: 'Isaac Pitwa',avatar: 'assets/images/avatar-1.png',)),);
                       },
                       shape: RoundedRectangleBorder(
                           side: BorderSide(
