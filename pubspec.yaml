@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^2.1.1
   iconsax: ^0.0.8
   fl_chart: ^0.40.6
+  animate_do: ^2.0.0
 
 dev_dependencies:
   flutter_test:
