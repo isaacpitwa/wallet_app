@@ -1,4 +1,7 @@
-# Wallet  Application Flutter
+# Wallet  Application Flutter 
+ > Wallet application is a mobile application user interface   for managing one's day to day finances expenses  exploring different user  screens required for a kind of application
+
+
 ### Wallet Page
 <img src="assets/screenshots/wallet.png" />
 
@@ -11,15 +14,39 @@
 ### Contact Page
 <img src="assets/screenshots/drawer.png" />
 
-## Getting Started
+## Built With
 
-This project is a starting point for a Flutter application.
+- Webpack
+- HTML & CSS
+- GitFlow
+- Linters
+- Documented Work
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Development set up
+Clone Repository  using 
+`git@github.com:isaacpitwa/wallet_app.git` 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+OR  using HTTPS
+
+`https://github.com/isaacpitwa/wallet_app.git` 
+
+move into project directory
+`cd wallet_app`
+
+Install  Project dependancies using `pub`
+
+`flutter pub get`
+
+launch project locally on real device or Emulator
+
+`flutter run` 
+
+
+## Authors
+
+👤 **Author1**
+
+- GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
+- Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
