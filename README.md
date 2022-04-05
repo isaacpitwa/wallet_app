@@ -3,16 +3,16 @@
 
 
 ### Wallet Page
-<img src="assets/screenshots/wallet.png" />
+<img src="assets/screenshots/wallet.png"  width= "60%" />
 
 ### Contact Page
-<img src="assets/screenshots/contact-page-2.png" />
+<img src="assets/screenshots/contact-page-2.png"  width= "60%"/>
 
 ### Send Money Page
-<img src="assets/screenshots/send-money-page.png" />
+<img src="assets/screenshots/send-money-page.png" width= "60%" />
 
 ### Contact Page
-<img src="assets/screenshots/drawer.png" />
+<img src="assets/screenshots/drawer.png" width= "60%" />
 
 ## Built With
 
