@@ -43,9 +43,7 @@ launch project locally on real device or Emulator
 `flutter run` 
 
 
-## Authors
-
-👤 **Author1**
+## 👤 Author
 
 - GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
